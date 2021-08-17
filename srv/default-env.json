@@ -1,0 +1,28 @@
+{
+  "VCAP_SERVICES": {
+    "xsuaa": [
+      {
+        "label": "xsuaa",
+        "name": "FullApplication-xsuaa-service",
+        "tags": ["xsuaa"],
+        "credentials": {
+          "tenantmode": "dedicated",
+          "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+          "subaccountid": "035ef799-e61d-4b19-bf22-29427590ecd3",
+          "credential-type": "instance-secret",
+          "clientid": "sb-node-hello-world!t23957",
+          "xsappname": "node-hello-world!t23957",
+          "clientsecret": "eJzExznKwPhisZwGgE3sGnWY3Fg=",
+          "url": "https://75b0995btrial.authentication.us10.hana.ondemand.com",
+          "uaadomain": "authentication.us10.hana.ondemand.com",
+          "verificationkey": "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxoro7ByBD4eto3o3FCL8sH0GcUEMTRl46BzlEXrA27dRlcLRjVF+bTfZ3+L7qQR2ytZ+bHrrDED41Is+o63RFl06uVa3+F3LkLJNdR3eB6twOk2KGJXGDdLNnKtpt5KUlw8q8dQM80xgTLRa0rDvvSbnXwSHH/OKR73A500WYK+3KDslMe951h4xKSkwxPbC1UTDaGcj7ez7XUOI8alXRzQCRkVBK7Byyc50BHttoJZ7EcyBYlEp2cmi4aPk6tEfS44zXJjggGJIVkhIEjH/CXMdbbBu7DuJo9p/abivP7cboa3Ey+vN/IpSrtJFkKYS9ch6AMpK+wWAIyxLnHIyaQIDAQAB-----END PUBLIC KEY-----",
+          "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+          "identityzone": "75b0995btrial",
+          "identityzoneid": "035ef799-e61d-4b19-bf22-29427590ecd3",
+          "tenantid": "035ef799-e61d-4b19-bf22-29427590ecd3",
+          "zoneid": "035ef799-e61d-4b19-bf22-29427590ecd3"
+        }
+      }
+    ]
+  }
+}

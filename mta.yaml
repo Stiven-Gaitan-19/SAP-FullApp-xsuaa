@@ -17,6 +17,8 @@ modules:
     - name: srv_api
       properties:
         url: ${default-url}
+  requires:
+    - name: uaa_FullApplication
 - name: fullapplication-approuter
   type: approuter.nodejs
   path: fullapplication-approuter
@@ -32,7 +34,7 @@ modules:
   - name: srv_api
     group: destinations
     properties:
-      forwardAuthToken: none
+      forwardAuthToken: true
       strictSSL: false
       name: srv_api
       url: ~{url}

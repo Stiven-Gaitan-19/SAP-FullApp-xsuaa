@@ -1,7 +1,22 @@
 const express = require('express');
+const passport = require('passport');
+const { JWTStrategy } = require('@sap/xssec');
+const xsenv = require('@sap/xsenv');
+const checkReadScope = require('./util/middlewares/auth');
 const app = express();
+const environment = process.env.NODE_ENV || "development";
 
-app.get("/api/users",(req,res)=>{
+if(environment === "development"){
+    xsenv.loadEnv();
+}
+
+passport.use(new JWTStrategy(xsenv.getServices({xsuaa:{tag:'xsuaa'}}).xsuaa));
+app.use(express.json())
+app.use(passport.initialize());
+app.use(passport.authenticate('JWT', {session: false}));
+
+
+app.get("/api/users", (req,res)=>{
     const user = [
         {
             name: "Johan Stiven",
@@ -20,9 +35,11 @@ app.get("/api/users",(req,res)=>{
         }
     ];
 
-    res.json(user).send();
+    res.send(user);
 });
 
-app.listen(4004, ()=>{
+const port = process.env.PORT || 4004;
+
+app.listen(port, ()=>{
     console.log("app is listening on http://localhost:4004");
 });

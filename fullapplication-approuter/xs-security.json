@@ -1,14 +1,12 @@
 {
-  "xsappname": "fullapplication",
+  "xsappname": "node-hello-world",
   "tenant-mode": "dedicated",
-  "description": "Security profile of called application",
   "scopes": [
     {
       "name": "$XSAPPNAME.read",
       "description": "With this scope, USER can read products."
     }
   ],
-
   "role-templates": [
     {
       "name": "Viewer",
@@ -16,18 +14,11 @@
       "scope-references": ["$XSAPPNAME.read"]
     }
   ],
-  "role-collections": [
-    {
-      "name": "ProductListViewer",
-      "description": "Product List Viewer",
-      "role-template-references": ["$XSAPPNAME.Viewer"]
-    }
-  ],
   "oauth2-configuration": {
-    "token-validity": 900,
     "redirect-uris": [
-      "http://localhost:4004",
-      "http://localhost:4004/my/logout"
+      "https://www.myappurl.com/login/callback",
+      "http://localhost:5000/login/callback",
+      "https://workspaces-ws-kfn9l-app2.us10.trial.applicationstudio.cloud.sap/login/callback"
     ]
   }
 }
